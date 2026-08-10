@@ -1,0 +1,306 @@
+/* =================================================
+   ABlytics Design System
+   ================================================= */
+
+:root {
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+
+    --background: #f8fafc;
+    --surface: #ffffff;
+    --surface-soft: #f1f5f9;
+
+    --text: #0f172a;
+    --muted: #64748b;
+
+    --border: #e2e8f0;
+    --border-hover: #cbd5e1;
+
+    --success-bg: #ecfdf5;
+    --success-text: #047857;
+
+    --radius: 12px;
+    --shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+
+/* =================================================
+   App
+   ================================================= */
+
+.stApp {
+    background: var(--background);
+    color: var(--text);
+}
+
+
+/* =================================================
+   Main Container
+   ================================================= */
+
+.block-container {
+    max-width: 1250px;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+
+/* =================================================
+   Hide Default Streamlit Elements
+   ================================================= */
+
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+header {
+    background: transparent !important;
+}
+
+
+/* =================================================
+   Typography
+   ================================================= */
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--text);
+}
+
+h1 {
+    font-size: 2.6rem !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.03em;
+}
+
+h2 {
+    font-size: 1.65rem !important;
+}
+
+h3 {
+    font-size: 1.15rem !important;
+}
+
+p {
+    color: var(--muted);
+}
+
+
+/* =================================================
+   Navbar
+   ================================================= */
+
+.navbar-brand {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+
+/* =================================================
+   Hero
+   ================================================= */
+
+.ab-hero {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.5rem 2.75rem;
+    margin: 1.5rem 0 2.5rem 0;
+    box-shadow: var(--shadow);
+}
+
+.ab-hero h1 {
+    margin-bottom: 0.7rem;
+}
+
+.ab-hero p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+
+/* =================================================
+   Analysis Cards
+   ================================================= */
+
+.analysis-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    min-height: 170px;
+    box-shadow: var(--shadow);
+    transition: 0.2s ease;
+}
+
+.analysis-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 5px 15px rgba(15, 23, 42, 0.08);
+    transform: translateY(-2px);
+}
+
+.analysis-card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+}
+
+.analysis-card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+}
+
+.analysis-card-description {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+
+/* =================================================
+   Metric Cards
+   ================================================= */
+
+.metric-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    min-height: 120px;
+    box-shadow: var(--shadow);
+}
+
+.metric-title {
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 0.45rem;
+}
+
+.metric-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.metric-subtitle {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 0.35rem;
+}
+
+
+/* =================================================
+   Section
+   ================================================= */
+
+.section-heading {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+
+/* =================================================
+   Buttons
+   ================================================= */
+
+.stButton > button {
+    min-height: 44px;
+    border-radius: 9px;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    transition: 0.2s ease;
+}
+
+
+/* Primary Button */
+
+.stButton > button[kind="primary"] {
+    background: var(--primary);
+    color: white;
+    border: 1px solid var(--primary);
+}
+
+.stButton > button[kind="primary"]:hover {
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
+    color: white;
+}
+
+
+/* Normal Button */
+
+.stButton > button:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+
+/* =================================================
+   Inputs
+   ================================================= */
+
+.stTextInput input,
+.stNumberInput input {
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+
+/* =================================================
+   Success Message
+   ================================================= */
+
+[data-testid="stAlert"] {
+    border-radius: 9px;
+}
+
+
+/* =================================================
+   Footer
+   ================================================= */
+
+.ab-footer {
+    border-top: 1px solid var(--border);
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+
+/* =================================================
+   Divider
+   ================================================= */
+
+hr {
+    border-color: var(--border);
+}
+
+
+/* =================================================
+   Responsive
+   ================================================= */
+
+@media (max-width: 768px) {
+
+    .block-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .ab-hero {
+        padding: 1.75rem;
+    }
+
+    h1 {
+        font-size: 2rem !important;
+    }
+}
