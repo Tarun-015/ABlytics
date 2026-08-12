@@ -1,0 +1,40 @@
+﻿# Virtual environment
+menv/
+venv/
+env/
+
+# Environment variables
+.env
+.env.*
+
+# Google OAuth credentials
+credentials.json
+token.json
+client_secret*.json
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Test/cache
+.pytest_cache/
+.mypy_cache/
+
+# Logs
+*.log
