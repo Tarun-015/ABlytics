@@ -6,53 +6,58 @@ from config.settings import APP_NAME
 from pages.home import show_home
 from pages.configuration import show_configuration
 from pages.dashboard import show_dashboard
+from pages.analytics import show_analytics
+from pages.documentation import show_documentation
 
-
-# Page configuration
 
 st.set_page_config(
     page_title=APP_NAME,
     page_icon="🧪",
     layout="wide",
-    initial_sidebar_state="collapsed"
+    initial_sidebar_state="collapsed",
 )
 
 
-# Load CSS
+# =========================================================
+# CSS
+# =========================================================
 
-css = Path("assets/style.css").read_text()
+css_path = Path("assets/style.css")
 
-st.markdown(
-    f"<style>{css}</style>",
-    unsafe_allow_html=True
-)
+if css_path.exists():
+
+    css = css_path.read_text(
+        encoding="utf-8"
+    )
+
+    st.markdown(
+        f"<style>{css}</style>",
+        unsafe_allow_html=True,
+    )
 
 
-# Session state
+# =========================================================
+# SESSION STATE
+# =========================================================
 
 if "app" not in st.session_state:
 
     st.session_state.app = {
-
         "page": "home",
-
         "project_name": "",
-
         "mode": None,
-
         "dataset": None,
-
         "results": None,
-
-        "ga4": None
-
+        "ga4": None,
     }
 
 
 app = st.session_state.app
 
 
-# Page routing
+# =========================================================
+# ROUTING
+# =========================================================
 
 if app["page"] == "home":
 
@@ -67,3 +72,20 @@ elif app["page"] == "configure":
 elif app["page"] == "dashboard":
 
     show_dashboard(app)
+
+
+elif app["page"] == "analytics":
+
+    show_analytics(app)
+
+
+elif app["page"] == "documentation":
+
+    show_documentation(app)
+
+
+else:
+
+    app["page"] = "home"
+
+    st.rerun()

@@ -47,7 +47,6 @@ def show_configuration(app):
             )
 
             if selected_property:
-
                 app["ga4"] = selected_property
 
     # =========================================================
@@ -69,7 +68,6 @@ def show_configuration(app):
     else:
 
         st.error("Unknown analysis mode.")
-
         return
 
     # =========================================================
@@ -89,58 +87,65 @@ def show_configuration(app):
     with col1:
 
         if st.button(
-            "← Back",
-            use_container_width=True
-        ):
-
-            app["page"] = "home"
-
-            st.rerun()
-
-    with col2:
-
-        if st.button(
-            "Run Analysis →",
+            "Run Analysis",
             type="primary",
-            use_container_width=True
+            use_container_width=True,
         ):
 
-            # ---------------------------------------------
+            # -------------------------------------------------
             # Validate dataset
-            # ---------------------------------------------
+            # -------------------------------------------------
 
             is_valid, errors = validate_dataset(dataset)
 
             if not is_valid:
 
                 for message in errors:
-
                     error(message)
 
-            else:
+                return
 
-                # -----------------------------------------
-                # Run analysis
-                # -----------------------------------------
+            # -------------------------------------------------
+            # Run analysis
+            # -------------------------------------------------
 
-                try:
+            try:
 
-                    engine = AnalysisEngine(dataset)
+                engine = AnalysisEngine(dataset)
 
-                    result = engine.run()
+                result = engine.run()
 
-                    app["dataset"] = dataset
+                app["dataset"] = dataset
+                app["results"] = result
+                app["page"] = "dashboard"
 
-                    app["analysis_result"] = result
+                st.rerun()
 
-                    app["page"] = "dashboard"
+            except Exception as exc:
 
+                error(
+                    f"Analysis failed: {exc}"
+                )
+                
+            if st.button(
+                    "Back",
+                    use_container_width=True,
+                ):
+                    app["page"] = "home"
                     st.rerun()
 
-                except Exception as exc:
+    with col2:
 
-                    error(
-                        f"Analysis failed: {exc}"
-                    )
+        if st.button(
+            "Back",
+            use_container_width=True,
+        ):
+
+            st.session_state["page"] = "home"
+            st.rerun()
+
+    # =========================================================
+    # FOOTER
+    # =========================================================
 
     show_footer()

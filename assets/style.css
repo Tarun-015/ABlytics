@@ -1,32 +1,40 @@
-/* =================================================
-   ABlytics Design System
-   ================================================= */
-
 :root {
     --primary: #2563eb;
-    --primary-hover: #1d4ed8;
+    --primary-dark: #1d4ed8;
+    --primary-soft: #eff6ff;
 
     --background: #f8fafc;
     --surface: #ffffff;
     --surface-soft: #f1f5f9;
 
     --text: #0f172a;
+    --text-secondary: #334155;
     --muted: #64748b;
 
     --border: #e2e8f0;
-    --border-hover: #cbd5e1;
+    --border-strong: #cbd5e1;
 
+    --success: #047857;
     --success-bg: #ecfdf5;
-    --success-text: #047857;
 
+    --warning: #b45309;
+    --warning-bg: #fffbeb;
+
+    --danger: #b91c1c;
+    --danger-bg: #fef2f2;
+
+    --radius-sm: 8px;
     --radius: 12px;
-    --shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+    --radius-lg: 16px;
+
+    --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+    --shadow: 0 4px 14px rgba(15, 23, 42, 0.07);
 }
 
 
-/* =================================================
-   App
-   ================================================= */
+/* =========================================================
+   APP
+   ========================================================= */
 
 .stApp {
     background: var(--background);
@@ -34,20 +42,20 @@
 }
 
 
-/* =================================================
-   Main Container
-   ================================================= */
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
 
 .block-container {
-    max-width: 1250px;
-    padding-top: 2rem;
-    padding-bottom: 3rem;
+    max-width: 1280px;
+    padding-top: 1.5rem;
+    padding-bottom: 4rem;
 }
 
 
-/* =================================================
-   Hide Default Streamlit Elements
-   ================================================= */
+/* =========================================================
+   REMOVE STREAMLIT CHROME
+   ========================================================= */
 
 #MainMenu {
     visibility: hidden;
@@ -62,232 +70,312 @@ header {
 }
 
 
-/* =================================================
-   Typography
-   ================================================= */
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
 
 h1,
 h2,
 h3,
-h4 {
-    color: var(--text);
+h4,
+h5,
+h6 {
+    color: var(--text) !important;
+}
+
+p,
+label,
+.stMarkdown {
+    color: var(--text-secondary);
 }
 
 h1 {
-    font-size: 2.6rem !important;
-    line-height: 1.15 !important;
-    letter-spacing: -0.03em;
+    font-size: 2.5rem !important;
+    font-weight: 750 !important;
+    letter-spacing: -0.035em;
 }
 
 h2 {
     font-size: 1.65rem !important;
+    font-weight: 700 !important;
 }
 
 h3 {
     font-size: 1.15rem !important;
-}
-
-p {
-    color: var(--muted);
+    font-weight: 700 !important;
 }
 
 
-/* =================================================
-   Navbar
-   ================================================= */
+/* =========================================================
+   NAVBAR
+   ========================================================= */
 
-.navbar-brand {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--text);
-}
-
-
-/* =================================================
-   Hero
-   ================================================= */
-
-.ab-hero {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 2.5rem 2.75rem;
-    margin: 1.5rem 0 2.5rem 0;
-    box-shadow: var(--shadow);
-}
-
-.ab-hero h1 {
-    margin-bottom: 0.7rem;
-}
-
-.ab-hero p {
-    margin: 0;
-    font-size: 1rem;
-}
-
-
-/* =================================================
-   Analysis Cards
-   ================================================= */
-
-.analysis-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    min-height: 170px;
-    box-shadow: var(--shadow);
-    transition: 0.2s ease;
-}
-
-.analysis-card:hover {
-    border-color: var(--border-hover);
-    box-shadow: 0 5px 15px rgba(15, 23, 42, 0.08);
-    transform: translateY(-2px);
-}
-
-.analysis-card-icon {
-    font-size: 1.8rem;
-    margin-bottom: 0.75rem;
-}
-
-.analysis-card-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 0.4rem;
-}
-
-.analysis-card-description {
-    font-size: 0.9rem;
-    color: var(--muted);
-}
-
-
-/* =================================================
-   Metric Cards
-   ================================================= */
-
-.metric-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.25rem;
-    min-height: 120px;
-    box-shadow: var(--shadow);
-}
-
-.metric-title {
-    font-size: 0.82rem;
-    color: var(--muted);
-    font-weight: 600;
-    margin-bottom: 0.45rem;
-}
-
-.metric-value {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--text);
-}
-
-.metric-subtitle {
-    font-size: 0.78rem;
-    color: var(--muted);
-    margin-top: 0.35rem;
-}
-
-
-/* =================================================
-   Section
-   ================================================= */
-
-.section-heading {
-    margin-top: 2rem;
+.ab-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.65rem 0 1rem 0;
     margin-bottom: 1rem;
 }
 
+.ab-brand {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.025em;
+}
 
-/* =================================================
-   Buttons
-   ================================================= */
-
-.stButton > button {
-    min-height: 44px;
-    border-radius: 9px;
+.ab-nav-link {
+    font-size: 0.9rem;
     font-weight: 600;
-    border: 1px solid var(--border);
-    transition: 0.2s ease;
+    color: var(--muted);
+    text-align: center;
 }
 
-
-/* Primary Button */
-
-.stButton > button[kind="primary"] {
-    background: var(--primary);
-    color: white;
-    border: 1px solid var(--primary);
-}
-
-.stButton > button[kind="primary"]:hover {
-    background: var(--primary-hover);
-    border-color: var(--primary-hover);
-    color: white;
-}
-
-
-/* Normal Button */
-
-.stButton > button:hover {
-    border-color: var(--primary);
+.ab-nav-link-active {
     color: var(--primary);
 }
 
 
-/* =================================================
-   Inputs
-   ================================================= */
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.ab-hero {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2.75rem;
+    margin: 1.25rem 0 2rem 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.ab-hero h1 {
+    margin: 0 0 0.7rem 0;
+}
+
+.ab-hero p {
+    margin: 0;
+    max-width: 750px;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.ab-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.ab-card:hover {
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow);
+}
+
+.ab-card-icon {
+    font-size: 1.6rem;
+    margin-bottom: 0.7rem;
+}
+
+.ab-card-title {
+    font-size: 1.05rem;
+    font-weight: 750;
+    color: var(--text);
+    margin-bottom: 0.45rem;
+}
+
+.ab-card-description {
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   METRIC CARDS
+   ========================================================= */
+
+.ab-stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.35rem;
+    text-align: center;
+    min-height: 125px;
+    box-shadow: var(--shadow-sm);
+}
+
+.ab-stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1.1;
+}
+
+.ab-stat-label {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+   ========================================================= */
+
+.ab-section {
+    margin-top: 2.25rem;
+    margin-bottom: 1rem;
+}
+
+.ab-section-title {
+    font-size: 1.25rem;
+    font-weight: 750;
+    color: var(--text);
+}
+
+.ab-section-description {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+
+/* =========================================================
+   VARIANT CARDS
+   ========================================================= */
+
+.ab-variant {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.ab-variant-title {
+    font-size: 1.05rem;
+    font-weight: 750;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.stButton > button {
+    min-height: 44px !important;
+    border-radius: 9px !important;
+    font-weight: 650 !important;
+    font-size: 0.9rem !important;
+    transition: all 0.15s ease !important;
+}
+
+.stButton > button[kind="primary"] {
+    background: var(--primary) !important;
+    color: #ffffff !important;
+    border: 1px solid var(--primary) !important;
+}
+
+.stButton > button[kind="primary"]:hover {
+    background: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
+    color: #ffffff !important;
+}
+
+.stButton > button:not([kind="primary"]) {
+    background: var(--surface) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border-strong) !important;
+}
+
+.stButton > button:not([kind="primary"]):hover {
+    background: var(--surface-soft) !important;
+    border-color: var(--primary) !important;
+    color: var(--primary) !important;
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
 
 .stTextInput input,
-.stNumberInput input {
-    border-radius: 8px;
-    border: 1px solid var(--border);
+.stNumberInput input,
+.stDateInput input,
+.stSelectbox div[data-baseweb="select"],
+.stMultiSelect div[data-baseweb="select"] {
+    border-radius: var(--radius-sm) !important;
 }
 
 
-/* =================================================
-   Success Message
-   ================================================= */
+/* =========================================================
+   ALERTS
+   ========================================================= */
 
 [data-testid="stAlert"] {
-    border-radius: 9px;
+    border-radius: var(--radius) !important;
 }
 
 
-/* =================================================
-   Footer
-   ================================================= */
-
-.ab-footer {
-    border-top: 1px solid var(--border);
-    margin-top: 3rem;
-    padding-top: 1.25rem;
-    color: var(--muted);
-    font-size: 0.8rem;
-}
-
-
-/* =================================================
-   Divider
-   ================================================= */
+/* =========================================================
+   DIVIDERS
+   ========================================================= */
 
 hr {
-    border-color: var(--border);
+    border-color: var(--border) !important;
 }
 
 
-/* =================================================
-   Responsive
-   ================================================= */
+/* =========================================================
+   DATAFRAME / TABLE
+   ========================================================= */
+
+[data-testid="stDataFrame"] {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+
+/* =========================================================
+   EXPANDERS
+   ========================================================= */
+
+[data-testid="stExpander"] {
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius) !important;
+    background: var(--surface);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.ab-footer {
+    margin-top: 3rem;
+    padding: 1.5rem 0 0.5rem 0;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 
 @media (max-width: 768px) {
 

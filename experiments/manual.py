@@ -19,12 +19,12 @@ from core.schema import StandardDataset, VariantData, FunnelStep
 def _render_ratio_inputs(spec, variant_letter: str, default_num, default_den):
     denom = st.number_input(
         spec.denominator_label, min_value=1, value=int(default_den),
-        key=f"manual_{variant_letter}_{spec.denominator}",
+        key=f"manual_{variant_letter}_{spec.name}_{spec.denominator}",
     )
     num_kwargs = dict(min_value=0.0, value=float(default_num)) if spec.numerator_is_float \
         else dict(min_value=0, value=int(default_num))
     num = st.number_input(
-        spec.numerator_label, key=f"manual_{variant_letter}_{spec.numerator}", **num_kwargs,
+        spec.numerator_label, key=f"manual_{variant_letter}_{spec.name}_{spec.numerator}", **num_kwargs,
     )
     return {spec.denominator: denom, spec.numerator: num}
 
