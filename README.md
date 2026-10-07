@@ -1,5 +1,4 @@
-````markdown
-# 🧪 ABlytics
+🧪 ABlytics
 
 **ABlytics** is an experiment analytics platform built to help teams analyze A/B experiments, compare variants, measure conversion performance, and make statistically informed decisions.
 
@@ -7,7 +6,7 @@ It supports **manual A/B analysis** and **Google Analytics 4 (GA4)-based analysi
 
 ---
 
-## 🚀 Features
+🚀 Features
 
 ### Manual A/B Testing
 Enter Variant A and Variant B data manually and analyze:
@@ -21,7 +20,7 @@ Enter Variant A and Variant B data manually and analyze:
 - Funnel performance
 - Statistical significance
 
-### Historical GA4 Comparison
+ Historical GA4 Comparison
 
 Compare two GA4 date ranges to understand changes in performance.
 
@@ -495,7 +494,4 @@ Data Science & Analytics
 
 ABlytics is an **completed deployed project** 
 ```
-
 **ABlytics: Experiment Analytics, Without the Guesswork.**
-
-
